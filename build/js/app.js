@@ -2,8 +2,13 @@
 
 $(document).ready(function(){
   $('#pretty-time').text(moment().format('h:mm a'));
-  $('#date').text(moment().format('MMM Do YYYY'))
-  $('#setted').text(moment().startOf('').fromNow('#set-alarm'))
+  $('#date').text(moment().format('MMM Do YYYY'));
+  $('#setted').text(moment());
+
+$("#alarmset").click(function() {
+  var input = $('#hours' +  '#tens-mins' + '#single-mins');
+  var timeAtSet = moment();
+});
 });
 
 },{}]},{},[1]);
