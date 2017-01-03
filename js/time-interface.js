@@ -1,4 +1,5 @@
 $(document).ready(function(){
-  $('#time').text(moment());
+  $('#pretty-time').text(moment().format('h:mm a'));
   $('#date').text(moment().format('MMM Do YYYY'))
+  $('#setted').text(moment().startOf('').fromNow('#set-alarm'))
 });

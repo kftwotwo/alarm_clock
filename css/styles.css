@@ -1,0 +1,27 @@
+body {
+  font-size: 62.5%;
+  background-color: plum;
+}
+h3 {
+  display: flex;
+  justify-content: center;
+  font-size: 6rem;
+}
+h3:first-of-type {
+  margin-top: 5rem;
+}
+label {
+  margin-top: 10rem;
+  display: flex;
+  font-size: 2rem;
+  font-weight: 200;
+  color: dimgrey;
+  justify-content: center;
+}
+button {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  width: 200px;
+  color: peachpuff;
+}

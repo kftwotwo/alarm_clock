@@ -4,17 +4,23 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="build/css/vendor.css">
+    <link rel="stylesheet" href="/css/styles.css" media="screen" title="no title" charset="utf-8">
     <title>Alarm Clock</title>
   </head>
   <body>
     <div class="container">
-      <h3>Well look at the time! </h3>
-      <h3 id="time"></h3>
+      <h3>You're Already Late!</h3>
       <h3 id="date"></h3>
-      helloasdf
+      <h3 id="pretty-time"></h3>
+      <form>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Enter an alarm here</label>
+          <input type="text" class="form-control" id="set-alarm" placeholder="Don't be Late in the Future">
+        </div>
+        <h3 id="setted"></h3>
+        <button type="submit" class="btn btn-default">Set the Alarm</button>
+      </form>
     </div>
-
-
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="bower_components/moment/min/moment.min.js"></script>
