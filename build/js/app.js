@@ -35,9 +35,10 @@ $(document).ready(function(){
   $('#alarmset').submit(function(event) {
     event.preventDefault();
     var hours = $('#hours').val();
+    // var ampm = $('#am-pm').val();
     var minutes = $('#tens-mins').val() + $('#single-mins').val();
     var timeAtSet = moment().set({'hour': hours, 'minute': minutes});
-    $('#setted').text(timeAtSet);
+    $('#setted').text(timeAtSet.format( 'h:mm a'));
   });
 });
 
