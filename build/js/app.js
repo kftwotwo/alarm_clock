@@ -21,8 +21,8 @@ var analogTime = null,
 
 var update = function() {
   time = moment();
-  date.html(time.format('dddd, MMMM Do YYYY'));
-  analogTime.html(time.format( 'h:mm:ss a'));
+  date.text(time.format('dddd, MMMM Do YYYY'));
+  analogTime.text(time.format( 'h:mm:ss a'));
 };
 
 $(document).ready(function(){
@@ -31,7 +31,6 @@ $(document).ready(function(){
    date = $('#date');
    update();
    setInterval(update, 1000);
-
 
   $('#alarmset').submit(function(event) {
     event.preventDefault();
