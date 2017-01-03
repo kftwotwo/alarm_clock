@@ -6,6 +6,7 @@ var uglify = require('gulp-uglify');
 var utilities = require('gulp-util');
 var del = require('del');
 var jshint = require('gulp-jshint');
+var moment = require('moment');
 var lib = require('bower-files')({
   "overrides":{
     "bootstrap" : {
@@ -26,8 +27,8 @@ gulp.task('concatScripts', function() {
   .pipe(gulp.dest('./tmp'));
 });
 
-gulp.task('jsBrowserify', function() {
-  return browserify({ entries: ['./js/script-interface.js'] })
+gulp.task('jsBrowserify', ['concatScripts'], function() {
+  return browserify({ entries: ['./tmp/allConcat.js'] })
   .bundle()
   .pipe(source('app.js'))
   .pipe(gulp.dest('./build/js'));
