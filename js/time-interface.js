@@ -1,8 +1,8 @@
-var Alarm = require('./../js/script.js').alarmModule;
 
 var analogTime = null,
         date = null,
         time = null,
+        audioElement= null,
         alarms = [];
 
 var update = function() {
@@ -10,14 +10,20 @@ var update = function() {
   date.text(time.format('dddd, MMMM Do YYYY'));
   analogTime.text(time.format( 'h:mm:ss a'));
   alarms.forEach(function(alarm,index) {
-    console.log("stuff going on: " + alarm._d);
     if (alarm.get('hours') == time.get('hours') && (alarm.get('minutes') == time.get('minutes'))) {
       alarms.splice(index,1);
-      console.log("hello");
+      playSound();
     }
   });
 };
-
+function playSound(){
+  audioElement;
+  if(!audioElement) {
+    audioElement = document.createElement('audio');
+    audioElement.innerHTML = '<source src="' + 'Ringing-clock.mp3'+ '" type="audio/mpeg" />'
+  }
+  audioElement.play();
+}
 
 $(document).ready(function(){
 
@@ -33,7 +39,6 @@ $(document).ready(function(){
     var timeAtSet = moment().set({'hour': hours, 'minute': minutes});
     alarms.push(timeAtSet);
     $('#setted').text(timeAtSet.format( 'h:mm a'));
-    console.log(alarms);
 
   });
 });
